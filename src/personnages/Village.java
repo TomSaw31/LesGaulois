@@ -6,7 +6,7 @@ public class Village {
 	public Village(String nom) {
 		this.nom = nom;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
