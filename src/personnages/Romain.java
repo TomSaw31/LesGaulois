@@ -93,17 +93,13 @@ public class Romain {
 	public void sEquiper(Equipement equipement) {
 		switch(nbEquipement) {
 		case 0:
-			equipements[0] = equipement;
-			nbEquipement++;
-			System.out.println("Le soldat " + getNom() + " s'equipe avec un " + equipement + ".");
+			equiperObjet(equipement, 0);
 			break;
 		case 1:
 			if (equipements[0] != null && equipement.equals(equipements[0])) {
 				System.out.println("Le soldat " + getNom() + " possede deja un " + equipement + " !");
 			} else {
-				System.out.println("Le soldat " + getNom() + " s'equipe avec un " + equipement + ".");
-				equipements[1] = equipement;
-				nbEquipement++;
+				equiperObjet(equipement, 1);
 			}
 			break;
 		case 2:
@@ -112,6 +108,12 @@ public class Romain {
 		default:
 			break;
 		}
+	}
+
+	private void equiperObjet(Equipement equipement, int indice) {
+		System.out.println("Le soldat " + getNom() + " s'equipe avec un " + equipement + ".");
+		equipements[indice] = equipement;
+		nbEquipement++;
 	}
 
 	public static void main(String[] args) {
