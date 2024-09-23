@@ -1,8 +1,8 @@
 package personnages;
 
 /**
- * Cette classe est utilisée pour représenter le comportement d'un romain.
- * Un romain est défini par son nom et sa force.
+ * Cette classe est utilisee pour representer le comportement d'un romain.
+ * Un romain est defini par son nom et sa force.
  * 
  * <p> Il peut :</p>
  * <ul>
@@ -23,7 +23,7 @@ public class Romain {
 
 	// --- CONSTRUCTEURS ---
 	/**
-	 * Crée un nouveau romain en fonction du nom et de la force spécifiée
+	 * Cree un nouveau romain en fonction du nom et de la force specifiee
 	 * 
 	 * @param nom   Le nom du romain (String)
 	 * @param force La force du romain (int)
@@ -44,33 +44,33 @@ public class Romain {
 	}
 
 	/**
-	 * Affiche une ligne de dialogue en fonction du texte spécifié
+	 * Affiche une ligne de dialogue en fonction du texte specifie
 	 * 
-	 * @param texte le texte prononcé par le romain (String)
+	 * @param texte le texte prononce par le romain (String)
 	 */
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + "<< " + texte + ">>");
 	}
 
 	/**
-	 * Inflige un coup et diminue la force du romain en fonction de l'intensité
-	 * spécifiée. Affiche un message en fonction de la force restante.
+	 * Inflige un coup et diminue la force du romain en fonction de l'intensite
+	 * specifiee. Affiche un message en fonction de la force restante.
 	 * 
-	 * @param forceCoup la force du coup infligé au romain (int)
+	 * @param forceCoup la force du coup inflige au romain (int)
 	 */
 	public void recevoirCoup(int forceCoup) {
 		force -= forceCoup;
 		if (force > 0) {
-			parler("Aïe");
+			parler("Aie");
 		} else {
 			parler("J'abandonne...");
 		}
 	}
 
 	/**
-	 * Renvoie une chaîne de caractères destinée à précéder une parole
+	 * Renvoie une chaine de caracteres destinee a preceder une parole
 	 * 
-	 * @return "Le romain NOM : " où NOM est le nom du romain (String)
+	 * @return "Le romain NOM : " ou NOM est le nom du romain (String)
 	 */
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";

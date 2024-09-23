@@ -1,8 +1,8 @@
 package personnages;
 
 /**
- * Cette classe est utilisée pour représenter le comportement d'un chef.
- * Un gaulois est défini par son nom et sa force.
+ * Cette classe est utilisee pour representer le comportement d'un chef.
+ * Un gaulois est defini par son nom et sa force.
  * 
  * <p> Il peut :</p>
  * <ul>
@@ -27,11 +27,11 @@ public class Chef {
 
 	// ===== CONSTRUCTEURS =====
 	/**
-	 * Crée un nouveau chef
+	 * Cree un nouveau chef
 	 *
 	 * @param nom   le nom du chef (String)
 	 * @param force la force du chef (int)
-	 * @param nom   le nom du village dirigé par le chef (String)
+	 * @param nom   le nom du village dirige par le chef (String)
 	 */
 	public Chef(String nom, int force, Village village) {
 		this.nom = nom;
@@ -50,29 +50,29 @@ public class Chef {
 	}
 
 	/**
-	 * Affiche une ligne de dialogue en fonction du texte spécifié
+	 * Affiche une ligne de dialogue en fonction du texte specifie
 	 * 
-	 * @param texte le texte prononcé par le chef (String)
+	 * @param texte le texte prononce par le chef (String)
 	 */
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + "<< " + texte + ">>");
 	}
 
 	/**
-	 * Frappe le romain spécifié. Les dégâts reçus sont propotionnels à l'attribut
+	 * Frappe le romain specifie. Les degats recus sont propotionnels a l'attribut
 	 * force
 	 * 
-	 * @param romain le romain visé par l'attaque (Romain)
+	 * @param romain le romain vise par l'attaque (Romain)
 	 */
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoir de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la machoir de " + romain.getNom());
 		romain.recevoirCoup(force / 3);
 	}
 
 	/**
-	 * Renvoie une chaîne de caractères destinée à précéder une parole
+	 * Renvoie une chaine de caracteres destinee a preceder une parole
 	 * 
-	 * @return "Le chef NOM : " où NOM est le nom du chef (Romain)
+	 * @return "Le chef NOM : " ou NOM est le nom du chef (Romain)
 	 */
 	private String prendreParole() {
 		return "Le chef " + nom + " : ";

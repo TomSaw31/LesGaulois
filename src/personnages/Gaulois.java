@@ -1,8 +1,8 @@
 package personnages;
 
 /**
- * Cette classe est utilisée pour représenter le comportement d'un gaulois.
- * Un gaulois est défini par son nom, sa force et l'effet de la potion qu'il a bu.
+ * Cette classe est utilisee pour representer le comportement d'un gaulois.
+ * Un gaulois est defini par son nom, sa force et l'effet de la potion qu'il a bu.
  * 
  * <p> Il peut :</p>
  * <ul>
@@ -22,13 +22,15 @@ public class Gaulois {
 	 */
 	private int force;
 	/**
-	 * L'effet de potion du gaulois. Initialisé à 1 par défaut
+	 * L'effet de potion du gaulois. Initialise à 1 par defaut
 	 */
 	private int effetPotion = 1;
 
 	// ===== CONSTRUCTEURS =====
 	/**
-	 * Crée un gaulois en fonction du nom et de la force spécifiée
+	/**
+
+	 * Cree un gaulois en fonction du nom et de la force specifiee
 	 * 
 	 * @param nom   Le nom du gaulois (String)
 	 * @param force La force du gaulois (int)
@@ -50,29 +52,29 @@ public class Gaulois {
 	}
 
 	/**
-	 * Affiche une ligne de dialogue en fonction du texte spécifié
+	 * Affiche une ligne de dialogue en fonction du texte specifie
 	 * 
-	 * @param texte le texte prononcé par le gaulois (String)
+	 * @param texte le texte prononce par le gaulois (String)
 	 */
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "« " + texte + "»");
+		System.out.println(prendreParole() + "<< " + texte + ">>");
 	}
 
 	/**
-	 * Affiche un messahe puis frappe le romain spécifié. Inflige des dégâts proportionnels à la force du
+	 * Affiche un messahe puis frappe le romain specifie. Inflige des degats proportionnels à la force du
 	 * gaulois.
 	 * 
-	 * @param romain le romain visé par l'attaque (Romain)
+	 * @param romain le romain vise par l'attaque (Romain)
 	 */
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup((force / 3) * effetPotion);
 	}
 
 	/**
 	 * Affiche les attributs du gaulois
 	 * 
-	 * @return chaîne de caractères contenant les attributs du gaulois (String)
+	 * @return chaine de caracteres contenant les attributs du gaulois (String)
 	 */
 	@Override
 	public String toString() {
@@ -80,19 +82,19 @@ public class Gaulois {
 	}
 
 	/**
-	 * Remplace l'effet actuel de la potion par celui passé en argument puis affiche un message
+	 * Remplace l'effet actuel de la potion par celui passe en argument puis affiche un message
 	 * 
 	 * @param forcePotion La nouvelle force de la potion du gaulois (int)
 	 */
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
-		parler("Merci Druide, je sens que ma force est " + String.valueOf(forcePotion) + " fois décuplée.");
+		parler("Merci Druide, je sens que ma force est " + forcePotion + " fois decuplee.");
 	}
 
 	/**
-	 * Renvoie une chaîne de caractères destinée à précéder une parole
+	 * Renvoie une chaine de caracteres destinee à preceder une parole
 	 * 
-	 * @return "Le gaulois NOM : " où NOM est le nom du gaulois (String)
+	 * @return "Le gaulois NOM : " ou NOM est le nom du gaulois (String)
 	 */
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
