@@ -1,13 +1,15 @@
 package personnages;
 
 /**
- * Cette classe est utilisee pour representer le comportement d'un romain.
- * Un romain est defini par son nom et sa force.
+ * Cette classe est utilisee pour representer le comportement d'un romain. Un
+ * romain est defini par son nom et sa force.
  * 
- * <p> Il peut :</p>
+ * <p>
+ * Il peut :
+ * </p>
  * <ul>
- *   <li> -parler ({@link #parler(String)})</li>
- *   <li> -prendre un coup ({@link #recevoirCoup(int)})</li>
+ * <li>-parler ({@link #parler(String)})</li>
+ * <li>-prendre un coup ({@link #recevoirCoup(int)})</li>
  * </ul>
  */
 public class Romain {
@@ -29,6 +31,9 @@ public class Romain {
 	 * @param force La force du romain (int)
 	 */
 	public Romain(String nom, int force) {
+		if (force < 0) {
+			throw new IllegalArgumentException("force negative");
+		}
 		this.nom = nom;
 		this.force = force;
 	}
@@ -59,11 +64,18 @@ public class Romain {
 	 * @param forceCoup la force du coup inflige au romain (int)
 	 */
 	public void recevoirCoup(int forceCoup) {
+		if (forceCoup < 0) {
+			throw new IllegalArgumentException("forceCoup negative");
+		}
+		int ancienne_force = force;
 		force -= forceCoup;
 		if (force > 0) {
 			parler("Aie");
 		} else {
 			parler("J'abandonne...");
+		}
+		if (ancienne_force < force ) {
+			throw new IllegalArgumentException("la force du romain n'a pas diminuee");
 		}
 	}
 
@@ -74,5 +86,10 @@ public class Romain {
 	 */
 	private String prendreParole() {
 		return "Le romain " + nom + " : ";
+	}
+	
+	
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus", 6);
 	}
 }
