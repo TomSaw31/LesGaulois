@@ -13,7 +13,7 @@ package personnages;
  * </ul>
  */
 public class Romain {
-	// --- ATTRIBUTS ---
+	// ===== ATTRIBUTS =====
 	/**
 	 * Le nom du romain
 	 */
@@ -22,10 +22,16 @@ public class Romain {
 	 * La force actuelle du romain
 	 */
 	private int force;
+	/**
+	 * Tableau contenant les equipements du romain
+	 */
 	private Equipement[] equipements = new Equipement[2];
+	/**
+	 * Le nombre q'equipements
+	 */
 	private int nbEquipement = 0;
 
-	// --- CONSTRUCTEURS ---
+	// ===== CONSTRUCTEURS =====
 	/**
 	 * Cree un nouveau romain en fonction du nom et de la force specifiee
 	 * 
@@ -40,7 +46,7 @@ public class Romain {
 		this.force = force;
 	}
 
-	// --- METHODES ---
+	// ===== METHODES =====
 	/**
 	 * Renvoie le nom du romain
 	 * 
@@ -90,8 +96,18 @@ public class Romain {
 		return "Le romain " + nom + " : ";
 	}
 
+	/**
+	 * Si le romain a déjà deux équipements la méthode affiche un message disant que
+	 * le romain possède déjà l'equipement. Si le soldat possède déjà un équipement
+	 * alors la première case du tableau est verifiee pour voir s'il s'agit du même
+	 * équipement que celui donné en paramètre d’entrée, puis affichera un message. Dans
+	 * les autres cas, l’équipement est ajouté au tableau et le nombre d’équipements
+	 * est incrémenté puis un message est affiché.
+	 * 
+	 * @param equipement L'equipement a equiper (Equipement)
+	 */
 	public void sEquiper(Equipement equipement) {
-		switch(nbEquipement) {
+		switch (nbEquipement) {
 		case 0:
 			equiperObjet(equipement, 0);
 			break;
@@ -110,6 +126,13 @@ public class Romain {
 		}
 	}
 
+	/**
+	 * Equipe un objet dans le tableau des equipements. Realise un affichage au
+	 * prealable disant quel romain s'equipe de quel equipement
+	 * 
+	 * @param equipement L'equipement a equiper (Equipement)
+	 * @param indice     L'indice du tableau d'equipements (int)
+	 */
 	private void equiperObjet(Equipement equipement, int indice) {
 		System.out.println("Le soldat " + getNom() + " s'equipe avec un " + equipement + ".");
 		equipements[indice] = equipement;

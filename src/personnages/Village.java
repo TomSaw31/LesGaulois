@@ -6,11 +6,20 @@ package personnages;
 public class Village {
 	// ===== ATTRIBUTS =====
 	/**
-	 * Le nom du village (String)
+	 * Le nom du village
 	 */
 	private String nom;
+	/**
+	 * Le chef du village
+	 */
 	private Chef chef;
+	/**
+	 * Les villageois du village
+	 */
 	private Gaulois[] villageois;
+	/**
+	 * Le nombre de villageois dans le village
+	 */
 	private int nbVillageois = 0;
 
 	// ===== CONSTRUCTEURS =====
@@ -43,6 +52,11 @@ public class Village {
 		this.chef = chef;
 	}
 
+	/**
+	 * Ajoute un gaulois dans le village
+	 * 
+	 * @param gaulois Le gaulois a ajouter dans le village (Gaulois)
+	 */
 	public void ajouterHabitant(Gaulois gaulois) {
 		villageois[nbVillageois] = gaulois;
 		nbVillageois++;
@@ -67,7 +81,7 @@ public class Village {
 		/*
 		 * Gaulois gaulois = village.trouverHabitant(30); On obtient l'erreur : Index 30
 		 * out of bounds for length 30 On obtient cette erreur car on cherche un gaulois
-		 * à la 31eme case dans un tableau de 30 cases
+		 * ï¿½ la 31eme case dans un tableau de 30 cases
 		 */
 
 		Chef abracourcix = new Chef("Abraracourcix", 8, village);
@@ -78,7 +92,7 @@ public class Village {
 		 * village.ajouterHabitant(asterix); Gaulois gaulois =
 		 * village.trouverHabitant(1); System.out.println(gaulois);
 		 * 
-		 * null est affiche car villageois contient un unique gaulois qui est à l'indice
+		 * null est affiche car villageois contient un unique gaulois qui est ï¿½ l'indice
 		 * 0 donc le villageois dans la case 1 n'est pas definie
 		 */
 
