@@ -73,7 +73,7 @@ public class Romain {
 	 */
 	public void recevoirCoup(int forceCoup) {
 		if (forceCoup < 0) {
-			throw new IllegalArgumentException("forceCoup negative");
+			throw new IllegalArgumentException("forceCoup negative : " + force);
 		}
 		int ancienne_force = force;
 		force -= forceCoup;
@@ -141,9 +141,11 @@ public class Romain {
 
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
-		minus.sEquiper(Equipement.CASQUE);
-		minus.sEquiper(Equipement.CASQUE);
-		minus.sEquiper(Equipement.BOUCLIER);
-		minus.sEquiper(Equipement.BOUCLIER);
+		Equipement casque = Equipement.CASQUE;
+		Equipement bouclier = Equipement.BOUCLIER;
+		minus.sEquiper(casque);
+		minus.sEquiper(casque);
+		minus.sEquiper(bouclier);
+		minus.sEquiper(bouclier);
 	}
 }

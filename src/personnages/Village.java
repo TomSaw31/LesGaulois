@@ -62,10 +62,19 @@ public class Village {
 		nbVillageois++;
 	}
 
+	/**
+	 * Renvoie le villageois du village en fonction du numero passe en argument
+	 * 
+	 * @param numero le numero de l'habitant a trouver (int)
+	 * @return le villageois correspondant (Gaulois)
+	 */
 	public Gaulois trouverHabitant(int numero) {
 		return villageois[numero];
 	}
 
+	/**
+	 * Affiche le chef du village ainsi que ses habitants
+	 */
 	public void afficherVillageois() {
 		System.out.println("Dans le village du chef " + chef + " vivent les legendaires gaulois :");
 		for (int i = 0; i < villageois.length; i++) {
@@ -81,7 +90,7 @@ public class Village {
 		/*
 		 * Gaulois gaulois = village.trouverHabitant(30); On obtient l'erreur : Index 30
 		 * out of bounds for length 30 On obtient cette erreur car on cherche un gaulois
-		 * � la 31eme case dans un tableau de 30 cases
+		 * a la 31eme case dans un tableau de 30 cases
 		 */
 
 		Chef abracourcix = new Chef("Abraracourcix", 8, village);
@@ -92,8 +101,8 @@ public class Village {
 		 * village.ajouterHabitant(asterix); Gaulois gaulois =
 		 * village.trouverHabitant(1); System.out.println(gaulois);
 		 * 
-		 * null est affiche car villageois contient un unique gaulois qui est � l'indice
-		 * 0 donc le villageois dans la case 1 n'est pas definie
+		 * null est affiche car villageois contient un unique gaulois qui est a l'indice
+		 * 0 donc le villageois dans la case 1 n'est pas defini
 		 */
 
 		Gaulois obelix = new Gaulois("Obelix", 25);
