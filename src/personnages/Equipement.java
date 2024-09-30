@@ -1,13 +1,17 @@
 package personnages;
 
+/**
+ * Cette enumeration est utilisee pour equiper un personne
+ */
 public enum Equipement {
 	CASQUE("casque"), BOUCLIER("bouclier");
+
 	// ===== ATTRIBUTS =====
 	/**
 	 * Le nom de l'equipement
 	 */
 	private String nom;
-	
+
 	// ===== CONSTRUCTEURS =====
 	/**
 	 * Cree un equipement portant le nom specifie
@@ -17,7 +21,7 @@ public enum Equipement {
 	private Equipement(String nom) {
 		this.nom = nom;
 	}
-	
+
 	// ===== METHODES =====
 	/**
 	 * Renvoie le nom de l'equipement

@@ -97,8 +97,7 @@ public class Druide {
 		if (random_force > 7) {
 			parler("J'ai prepare une super potion de force " + random_force + ".");
 		} else {
-			parler("Je n'ai pas trouve tous les ingredients, ma potion est seulement de force "
-					+ random_force + ".");
+			parler("Je n'ai pas trouve tous les ingredients, ma potion est seulement de force " + random_force + ".");
 		}
 		forcePotion = random_force;
 	}
