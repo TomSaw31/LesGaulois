@@ -1,28 +1,24 @@
 package personnages;
 
 /**
- * Cette classe est utilisee pour representer le comportement d'un chef.
- * Un gaulois est defini par son nom et sa force.
+ * Cette classe est utilisee pour representer le comportement d'un chef. Un
+ * gaulois est defini par son nom et sa force.
  * 
- * <p> Il peut :</p>
+ * <p>
+ * Il peut :
+ * </p>
  * <ul>
- *   <li> -parler ({@link #parler(String)})</li>
- *   <li> -frapper un romain ({@link #frapper(Romain)})</li>
+ * <li>-parler ({@link #parler(String)})</li>
+ * <li>-frapper un romain ({@link #frapper(Romain)})</li>
  * </ul>
  */
 public class Chef {
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom du chef
-	 */
+	/** Le nom du chef */
 	private String nom;
-	/**
-	 * La force du chef
-	 */
+	/** La force du chef */
 	private int force;
-	/**
-	 * Le nom du village du chef
-	 */
+	/** Le nom du village du chef */
 	private Village village;
 
 	// ===== CONSTRUCTEURS =====

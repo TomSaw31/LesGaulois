@@ -13,23 +13,15 @@ package personnages;
  */
 public class Gaulois {
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom du gaulois
-	 */
+	/** Le nom du gaulois */
 	private String nom;
-	/**
-	 * La force du gaulois
-	 */
+	/** La force du gaulois */
 	private int force;
-	/**
-	 * L'effet de potion du gaulois. Initialise à 1 par defaut
-	 */
+	/** L'effet de potion du gaulois. Initialise à 1 par defaut */
 	private int effetPotion = 1;
 
 	// ===== CONSTRUCTEURS =====
 	/**
-	/**
-
 	 * Cree un gaulois en fonction du nom et de la force specifiee
 	 * 
 	 * @param nom   Le nom du gaulois (String)

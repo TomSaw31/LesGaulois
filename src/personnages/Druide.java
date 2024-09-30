@@ -18,21 +18,14 @@ import java.util.Random;
  */
 public class Druide {
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom du druide
-	 */
+	/** Le nom du druide */
 	private String nom;
-	/**
-	 * L'effet minimum des potions preparees par le druide (int)
-	 */
+	/** L'effet minimum des potions preparees par le druide */
 	private int effetPotionMin;
-	/**
-	 * L'effet maximum des potions preparees par le druide (int)
-	 */
+	/** L'effet maximum des potions preparees par le druide */
 	private int effetPotionMax;
 	/**
 	 * L'effet actuel de la potion prepare par le druide. Initialise a 1 par defaut.
-	 * (int)
 	 */
 	private int forcePotion = 1;
 	private Random rand = new Random();

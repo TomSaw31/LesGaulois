@@ -5,28 +5,22 @@ package personnages;
  */
 public class Village {
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom du village
-	 */
+	/** Le nom du village */
 	private String nom;
-	/**
-	 * Le chef du village
-	 */
+	/** Le chef du village */
 	private Chef chef;
-	/**
-	 * Les villageois du village
-	 */
+	/** Les villageois du village */
 	private Gaulois[] villageois;
-	/**
-	 * Le nombre de villageois dans le village
-	 */
+	/** Le nombre de villageois dans le village */
 	private int nbVillageois = 0;
 
 	// ===== CONSTRUCTEURS =====
 	/**
 	 * Cree un nouveau village portant le nom specifie
 	 *
-	 * @param nom le nom du village (String)
+	 * @param nom                 le nom du village (String)
+	 * @param nbVillageoisMaximum le nombre maximum de villageois que le village
+	 *                            peut accueillir
 	 */
 	public Village(String nom, int nbVillageoisMaximum) {
 		this.villageois = new Gaulois[nbVillageoisMaximum];
@@ -72,9 +66,7 @@ public class Village {
 		return villageois[numero];
 	}
 
-	/**
-	 * Affiche le chef du village ainsi que ses habitants
-	 */
+	/** Affiche le chef du village ainsi que ses habitants */
 	public void afficherVillageois() {
 		System.out.println("Dans le village du chef " + chef + " vivent les legendaires gaulois :");
 		for (int i = 0; i < villageois.length; i++) {

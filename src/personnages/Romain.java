@@ -14,21 +14,13 @@ package personnages;
  */
 public class Romain {
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom du romain
-	 */
+	/** Le nom du romain */
 	private String nom;
-	/**
-	 * La force actuelle du romain
-	 */
+	/** La force actuelle du romain */
 	private int force;
-	/**
-	 * Tableau contenant les equipements du romain
-	 */
+	/** Tableau contenant les equipements du romain */
 	private Equipement[] equipements = new Equipement[2];
-	/**
-	 * Le nombre q'equipements
-	 */
+	/** Le nombre q'equipements */
 	private int nbEquipement = 0;
 
 	// ===== CONSTRUCTEURS =====

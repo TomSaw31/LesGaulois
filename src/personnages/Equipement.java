@@ -1,15 +1,17 @@
 package personnages;
 
 /**
- * Cette enumeration est utilisee pour equiper un personne
+ * Cette enumeration est utilisee pour equiper un personne. Les equipements
+ * possibles sont les casques et les boucliers
  */
 public enum Equipement {
-	CASQUE("casque"), BOUCLIER("bouclier");
+	/** casque */
+	CASQUE("casque"),
+	/** bouclier */
+	BOUCLIER("bouclier");
 
 	// ===== ATTRIBUTS =====
-	/**
-	 * Le nom de l'equipement
-	 */
+	/** Le nom de l'equipement */
 	private String nom;
 
 	// ===== CONSTRUCTEURS =====
@@ -23,9 +25,7 @@ public enum Equipement {
 	}
 
 	// ===== METHODES =====
-	/**
-	 * Renvoie le nom de l'equipement
-	 */
+	/** Renvoie le nom de l'equipement */
 	public String toString() {
 		return nom;
 	}
