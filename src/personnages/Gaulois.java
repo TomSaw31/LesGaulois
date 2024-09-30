@@ -1,14 +1,16 @@
 package personnages;
 
 /**
- * Cette classe est utilisee pour representer le comportement d'un gaulois.
- * Un gaulois est defini par son nom, sa force et l'effet de la potion qu'il a bu.
+ * Cette classe est utilisee pour representer le comportement d'un gaulois. Un
+ * gaulois est defini par son nom, sa force et l'effet de la potion qu'il a bu.
  * 
- * <p> Il peut :</p>
+ * <p>
+ * Il peut :
+ * </p>
  * <ul>
- *   <li> -parler ({@link #parler(String)})</li>
- *   <li> -frapper un romain ({@link #frapper(Romain)})</li>
- *   <li> -boire une potion ({@link #boirePotion(int)})</li>
+ * <li>-parler ({@link #parler(String)})</li>
+ * <li>-frapper un romain ({@link #frapper(Romain)})</li>
+ * <li>-boire une potion ({@link #boirePotion(int)})</li>
  * </ul>
  */
 public class Gaulois {
@@ -19,6 +21,8 @@ public class Gaulois {
 	private int force;
 	/** L'effet de potion du gaulois. Initialise à 1 par defaut */
 	private int effetPotion = 1;
+	private int nbtrophees;
+	private Equipement[] trophees = new Equipement[100];
 
 	// ===== CONSTRUCTEURS =====
 	/**
@@ -32,7 +36,6 @@ public class Gaulois {
 		this.force = force;
 	}
 
-	
 	// ===== METHODES =====
 	/**
 	 * Renvoie le nom du gaulois
@@ -53,14 +56,22 @@ public class Gaulois {
 	}
 
 	/**
-	 * Affiche un messahe puis frappe le romain specifie. Inflige des degats proportionnels à la force du
-	 * gaulois.
+	 * Affiche un messahe puis frappe le romain specifie. Inflige des degats
+	 * proportionnels à la force du gaulois.
 	 * 
 	 * @param romain le romain vise par l'attaque (Romain)
 	 */
+//	public void frapper(Romain romain) {
+//		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+//		romain.recevoirCoup((force / 3) * effetPotion);
+//	}
+
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
-		romain.recevoirCoup((force / 3) * effetPotion);
+		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
+		Equipement[] troph = romain.recevoirCoup((force / 3) * effetPotion);
+		for (int i = 0; troph != null && i < troph.length; i++, nbtrophees++) {
+			this.trophees[nbtrophees] = troph[i];
+		}
 	}
 
 	/**
@@ -74,7 +85,8 @@ public class Gaulois {
 	}
 
 	/**
-	 * Remplace l'effet actuel de la potion par celui passe en argument puis affiche un message
+	 * Remplace l'effet actuel de la potion par celui passe en argument puis affiche
+	 * un message
 	 * 
 	 * @param forcePotion La nouvelle force de la potion du gaulois (int)
 	 */
@@ -88,6 +100,9 @@ public class Gaulois {
 	 * 
 	 * @return "Le gaulois NOM : " ou NOM est le nom du gaulois (String)
 	 */
+//	private String prendreParole() {
+//		return "Le gaulois " + nom + " : ";
+//	}
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
