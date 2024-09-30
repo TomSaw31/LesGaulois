@@ -1,5 +1,7 @@
 package personnages;
 
+import villagegaulois.Village;
+
 /**
  * Cette classe est utilisee pour representer le comportement d'un chef. Un
  * gaulois est defini par son nom et sa force.

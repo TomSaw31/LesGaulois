@@ -1,5 +1,7 @@
 package personnages;
 
+import villagegaulois.Musee;
+
 /**
  * Cette classe est utilisee pour representer le comportement d'un gaulois. Un
  * gaulois est defini par son nom, sa force et l'effet de la potion qu'il a bu.
@@ -21,7 +23,9 @@ public class Gaulois {
 	private int force;
 	/** L'effet de potion du gaulois. Initialise à 1 par defaut */
 	private int effetPotion = 1;
+	/** Le nombre de trophees possedes par le gaulois */
 	private int nbtrophees;
+	/** Les trophees possedes par le gaulois */
 	private Equipement[] trophees = new Equipement[100];
 
 	// ===== CONSTRUCTEURS =====
@@ -61,16 +65,11 @@ public class Gaulois {
 	 * 
 	 * @param romain le romain vise par l'attaque (Romain)
 	 */
-//	public void frapper(Romain romain) {
-//		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
-//		romain.recevoirCoup((force / 3) * effetPotion);
-//	}
-
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
-		Equipement[] troph = romain.recevoirCoup((force / 3) * effetPotion);
-		for (int i = 0; troph != null && i < troph.length; i++, nbtrophees++) {
-			this.trophees[nbtrophees] = troph[i];
+		System.out.println(nom + " envoie un grand coup dans la machoire de " + romain.getNom());
+		Equipement[] trophs = romain.recevoirCoup((force / 3) * effetPotion);
+		for (int i = 0; trophs != null && i < trophs.length; i++, nbtrophees++) {
+			this.trophees[nbtrophees] = trophs[i];
 		}
 	}
 
@@ -96,13 +95,29 @@ public class Gaulois {
 	}
 
 	/**
+	 * Fait une donation au musee specifie. Tous les trophees sont donnes et sont
+	 * enleves. Affiche un message contenant les trophhes enleves.
+	 * 
+	 * @param musee Le musee cible du don (int)
+	 */
+	public void faireUneDonation(Musee musee) {
+		if (nbtrophees > 0) {
+			String texte = "Je donne au musee tous mes trophees :";
+			while (nbtrophees > 0) {
+				nbtrophees--;
+				musee.donnerTrophees(this, trophees[nbtrophees]);
+				texte += "\n - " + trophees[nbtrophees];
+				trophees[nbtrophees] = null;
+			}
+			parler(texte);
+		}
+	}
+
+	/**
 	 * Renvoie une chaine de caracteres destinee à preceder une parole
 	 * 
 	 * @return "Le gaulois NOM : " ou NOM est le nom du gaulois (String)
 	 */
-//	private String prendreParole() {
-//		return "Le gaulois " + nom + " : ";
-//	}
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}

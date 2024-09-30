@@ -26,6 +26,10 @@ public enum Equipement {
 
 	// ===== METHODES =====
 	/** Renvoie le nom de l'equipement */
+	public String getNom() {
+		return nom;
+	}
+
 	@Override
 	public String toString() {
 		return nom;

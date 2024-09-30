@@ -1,4 +1,7 @@
-package personnages;
+package villagegaulois;
+
+import personnages.Chef;
+import personnages.Gaulois;
 
 /**
  * Cette classe est utilisee pour representer le comportement d'un village
