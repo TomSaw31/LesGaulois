@@ -16,9 +16,7 @@ public class Romain {
 	// ===== CONSTANTES =====
 	/** Chaine de caracteres utilisee pour eviter les repetitions : "Le soldat " */
 	private static final String SOLDAT_STR = "Le soldat ";
-	/** Force du coup recu minimum pour eviter que le romain ne se fasse taper indefiniment */
-	private static final int FORCE_MINIMUM = 1;
-	
+
 	// ===== ATTRIBUTS =====
 	/** Le nom du romain */
 	private String nom;
@@ -28,8 +26,8 @@ public class Romain {
 	private Equipement[] equipements = new Equipement[2];
 	/** Le nombre d'equipements */
 	private int nbEquipement = 0;
-	/** Indique si le romain a ete battu */
-	private boolean battu = false;
+	/** Indique si le romain a gagne contre le gaulois */
+	private boolean vainqueur = false;
 
 	// ===== CONSTRUCTEURS =====
 	/**
@@ -64,12 +62,12 @@ public class Romain {
 	}
 
 	/**
-	 * Renvoie si le romain a ete vaincu
+	 * Renvoie si le romain a gagne son duel
 	 * 
-	 * @return l'etat du romain (true si battu, false sinon) (boolean)
+	 * @return l'etat du romain (true si il gagne, false sinon) (boolean)
 	 */
-	public boolean isBattu() {
-		return battu;
+	public boolean isVainqueur() {
+		return vainqueur;
 	}
 
 	/**
@@ -131,23 +129,27 @@ public class Romain {
 		// precondition
 		int oldForce = force;
 		forceCoup = calculResistanceEquipement(forceCoup);
-		force -= forceCoup;
-		assert verifierForceValide();
-		if (force > 0) {
-			parler("Aie");
+		if (forceCoup <= 0) {
+			vainqueur = true;
+			parler("J'ai gagne.");
 		} else {
-			equipementEjecte = ejecterEquipement();
-			parler("J'abandonne...");
-			battu = true;
+			force -= forceCoup;
+			assert verifierForceValide();
+			if (force > 0) {
+				parler("Aie");
+			} else {
+				equipementEjecte = ejecterEquipement();
+				parler("J'abandonne...");
+			}
 		}
 		// post condition la force a diminuee
-		assert force < oldForce;
+		assert force <= oldForce;
 		return equipementEjecte;
 	}
 
 	/**
 	 * Calcule et diminue la force du coup passee en parametre en fonction de
-	 * l'equipement porte par le romain
+	 * l'equipement porte par le romain (BOUCLIER : resistance = 8, CASQUE: resistance = 5)
 	 * 
 	 * @param forceCoup la force du coup initiale avant diminution (int)
 	 * @return la force du coup apres diminution grace aux equipements (int)
@@ -171,9 +173,6 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
-		if (forceCoup < 0) {
-			forceCoup = FORCE_MINIMUM;
-		}
 		return forceCoup;
 	}
 

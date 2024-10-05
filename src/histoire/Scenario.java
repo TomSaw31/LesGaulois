@@ -29,11 +29,11 @@ public class Scenario {
 		minus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(minus);
-		} while (!minus.isBattu());
+		} while (!minus.isVainqueur() && minus.getForce() > 0);
 		milexcus.parler("UN GAU... UN GAUGAU...");
 		do {
 			asterix.frapper(milexcus);
-		} while (!milexcus.isBattu());		
+		} while (!milexcus.isVainqueur() && milexcus.getForce() > 0);		
 		Musee musee = new Musee();
 		asterix.faireUneDonation(musee);
 		
