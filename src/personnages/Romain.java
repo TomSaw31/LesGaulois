@@ -123,6 +123,7 @@ public class Romain {
 	 * specifiee. Affiche un message en fonction de la force restante.
 	 * 
 	 * @param forceCoup la force du coup inflige au romain (int)
+	 * @return lliste des equipements perdus par le romain lors d'un combat (Equipement[])
 	 */
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;

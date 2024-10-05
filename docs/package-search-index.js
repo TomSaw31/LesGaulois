@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"histoire"},{"l":"personnages"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"histoire"},{"l":"personnages"},{"l":"villagegaulois"}];updateSearchResults();

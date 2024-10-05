@@ -29,7 +29,7 @@ public class Chef {
 	 *
 	 * @param nom   le nom du chef (String)
 	 * @param force la force du chef (int)
-	 * @param nom   le nom du village dirige par le chef (String)
+	 * @param village   le nom du village dirige par le chef (String)
 	 */
 	public Chef(String nom, int force, Village village) {
 		this.nom = nom;

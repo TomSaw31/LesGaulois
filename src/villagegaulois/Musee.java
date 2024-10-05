@@ -5,7 +5,7 @@ import personnages.Gaulois;
 import personnages.Trophee;
 
 /**
- * Cette classe est utilisee ppour representer un musee dans un village. Le
+ * Cette classe est utilisee pour representer un musee dans un village. Le
  * musee sert a garder les differents trophees recoltes par les gaulois
  */
 public class Musee {
